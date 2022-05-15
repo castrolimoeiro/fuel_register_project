@@ -42,14 +42,16 @@ endif;
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     
     <title>Login</title>
 </head>
 <body>
+    <?php include_once 'includes/header.php';?>
+    
+    <div align="center">
     <h1> Login </h1>
+    </div>
     <?php
     if(!empty($erros)):
         foreach($erros as $erro):
@@ -59,9 +61,12 @@ endif;
     ?>
     <hr>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+        <div widht=100px>
         Login: <input type="text" name="login"><br>
         Senha: <input type="password" name="senha"><br><br>
+        </div>
     <button type="submit" name="btn-entrar">Entrar</button>
+    <?php include_once 'includes/footer.php';?>
     </form>
 </body>
 </html>
