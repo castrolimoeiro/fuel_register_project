@@ -21,7 +21,7 @@ endif;
 
 <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo"><h5 class="light">Olá, <?php echo $dados['nome']; ?></h5></a>
+      <a href="home.php" class="brand-logo"><h5 class="light">Olá, <?php echo $dados['nome']; ?></h5>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="home.php">Início</a></li>
         <li><a href="abastecimentos.php">Abastecimentos</a></li>
@@ -29,6 +29,12 @@ endif;
       </ul>
     </div>
 </nav>
+<style>
+    .nav-wrapper {       
+       border-left: 10px solid darkblue;
+       background: darkblue;
+    }
+</style>
 
 <!DOCTYPE html>
 <html lang="pt-br">

@@ -10,9 +10,6 @@ session_start();
 if(!isset($_SESSION['logado'])):
     header('Location: login.php');
 endif;
-
-
-
 ?>
 <?php
     $id = $_SESSION['id_usuario'];
@@ -31,17 +28,24 @@ endif;
       </ul>
     </div>
 </nav>
+<style>
+    .nav-wrapper {       
+       border-left: 10px solid darkblue;
+       background: darkblue;
+    }
+</style>
+
 <div class="row">
-    <div class="col s12 m4 push-m2"></div>
+    <div class="col s12 m4 push-m2-container"></div>
     <h3 class="light">Abastecimentos</h3>
-        <table class="striped">
+        <table class="tabela">
             <thead>
                 <tr>
                     <th>Veículo</th>
                     <th>Km</th>
                     <th>Valor</th>
                     <th>Litros</th>
-                    <th>Saldo Restante</th>
+                    <th>Saldo Restante (R$)</th>
                 </tr>
             </thead>
 
@@ -54,12 +58,26 @@ endif;
                 <tr>
                     <td><?php echo $dados['veiculo']?></td>
                     <td><?php echo $dados['km']?></td>
-                    <td><?php echo $dados['valor']?></td>
+                    <td><?php echo"R$ ". $dados['valor']?></td>
                     <td><?php echo $dados['litros']?></td>
-                    <td><?php echo $dados['saldo']?></td>
+                    <td><?php echo "R$ ". $dados['saldo']?></td>
+                    <td><a href="edit.php?id=<?php echo $dados['id']?>" class="btn-floating orange"><i class="material-icons">
+                        edit
+                    </i></a></td>
+                    <td><a href="" class="btn-floating red"><i class="material-icons">
+                        delete
+                    </i></a></td>
                 </tr>
                 <?php endwhile; ?>
             </tbody>
         </table>
+<style>
+    .tabela {
+        box-sizing: border-box;
+        border: ;
+        width: 95%;
+        float: right;
+    }
 
+</style>
 </div>
